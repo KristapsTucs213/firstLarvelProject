@@ -20,7 +20,7 @@
         <textarea name="content" id="content">{{$post -> content}}</textarea>
         <br>
 
-        <input type="submit" value="Create">
+        <input type="submit" value="Edit">
     </form>  
 </body>
 </html>
