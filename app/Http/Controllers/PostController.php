@@ -38,4 +38,22 @@ class PostController extends Controller
         // return view('posts.index');
         return redirect('/posts/');
     }
+
+    public function edit($id){
+        $post = Post::find($id);
+        return view('posts.edit', ['post' => $post]);
+    }
+
+    public function update(Request $requst, $id){
+        $post = Post::find($id);
+        $data = [
+            "title" => $requst -> title,
+            'content' => $requst ->content
+        ];
+
+        $post->update($data);
+
+        // return view('posts.index');
+        return redirect('/posts/');
+    }
 }
